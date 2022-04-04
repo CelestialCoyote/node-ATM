@@ -1,8 +1,13 @@
 "use strict";
+
 //TODO: Import necessary values from account.js
+const accountBalance = require('./account');
+const accountPin = require('./account');
+
 
 function getBalance() {
   //TODO: Return the customer's acct. balance
+  console.log(accountBalance);
 }
 
 function withdraw(withdrawAmount) {
@@ -23,3 +28,6 @@ function validatePin(enteredPin) {
 }
 
 //TODO: Export these functions
+module.exports = {
+  getBalance: getBalance
+};
