@@ -18,11 +18,21 @@ function deposit(depositAmount) {
   console.log(`New account balance after $${depositAmount} is $${account.balance}`);
 
   return account.balance
-  //TODO: deposit amount to current acct. balance
   // Log the current balance after deposit is made
 }
 
 function validatePin(enteredPin) {
+  let flag = false;
+  let userPin = enteredPin;
+  let isNum = /^\d+$/.test(userPin);
+
+  if(isNum == false){
+    console.log('Please enter only numbers between 0 and 9.');
+  } else {
+    console.log(isNum);
+  }
+
+  return flag;
   //TODO: Check if entered pin matches account.js pin
   //Allow access to ATM if matching
   //Return value should be a Boolean (true or false)

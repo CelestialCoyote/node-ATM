@@ -29,5 +29,4 @@ function mainMenu() {
 console.log(getBalance());
 deposit(42);
 console.log(getBalance());
-let userAccount = prompt('Please enter account number.');
-console.log(userAccount);
+validatePin(prompt('Please enter account number.'));
