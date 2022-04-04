@@ -1,0 +1,12 @@
+{
+  "name": "nodeatm",
+  "version": "1.0.0",
+  "description": "devCodeCamp project nodeATM",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "author": "Paul Stearns",
+  "license": "ISC"
+}
