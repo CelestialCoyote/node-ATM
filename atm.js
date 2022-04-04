@@ -1,13 +1,12 @@
 "use strict";
 
 //TODO: Import necessary values from account.js
-const accountBalance = require('./account');
-const accountPin = require('./account');
+const { accountBalance, accountPin } = require('./account');
 
 
 function getBalance() {
   //TODO: Return the customer's acct. balance
-  console.log(accountBalance);
+  return accountBalance;
 }
 
 function withdraw(withdrawAmount) {

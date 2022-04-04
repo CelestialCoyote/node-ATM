@@ -2,8 +2,6 @@
 
 const { getBalance } = require('./atm');
 
-
-const getBalance = require('./atm');
 //TODO: Add debugger (see demo video)
 //! Don't forget to add "console": "integratedTerminal" to .vscode/launch.json after creating launch configuration
 //TODO: Import necessary functions from atm.js
