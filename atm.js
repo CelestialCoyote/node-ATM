@@ -1,6 +1,7 @@
 "use strict";
 
 
+const prompt = require('prompt-sync')();
 const { account } = require('./account');
 
 
@@ -22,16 +23,42 @@ function deposit(depositAmount) {
 }
 
 function validatePin(enteredPin) {
+  let numberOfTries = 3;
   let flag = false;
-  let userPin = enteredPin;
-  let isNum = /^\d+$/.test(userPin);
+  //let isNumber = false;
+  let pinToCheck = 0;
 
-  if(isNum == false){
-    console.log('Please enter only numbers between 0 and 9.');
-  } else {
-    console.log(isNum);
+  let isNumber = /^\d+$/.test(enteredPin);
+  pinToCheck = parseInt(enteredPin);
+
+  while(numberOfTries > 0) {
+    if(isNumber === false){
+      numberOfTries--;
+      let test = prompt(`Please enter only numbers between 0 and 9.\n${numberOfTries} attempts remaining.`);
+      isNumber = /^\d+$/.test(test);
+    } else if(pinToCheck !== account.pin) {
+      numberOfTries--;
+      prompt(`Incorrect PIN, please try again.\n${numberOfTries} attempts remaining.`);
+      
+    } else if(pinToCheck === account.pin) {
+      //console.log(`PIN successfully entered.`);
+      //flag = true;
+      break;
+    }
   }
 
+  //if(numberOfTries == 0) {
+  //  console.log(
+  //    `You have exceeded the maximum number of trys.\nYour account has been locked for your security.\nPlease see branch manager to unlock account.\nHave a nice day.`
+  //    );
+  //} else {
+  //  console.log(`PIN successfully entered.`);
+  //  flag = true;
+  //}
+
+  console.log(`PIN successfully entered.`);
+  flag = true;
+  
   return flag;
   //TODO: Check if entered pin matches account.js pin
   //Allow access to ATM if matching

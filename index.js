@@ -26,7 +26,4 @@ function mainMenu() {
 }
 
 //TODO: Call mainMenu function to start our app!
-console.log(getBalance());
-deposit(42);
-console.log(getBalance());
-validatePin(prompt('Please enter account number.'));
+console.log(validatePin(prompt('Please enter 4 digit pin number. #### - ')));
