@@ -1,5 +1,6 @@
 "use strict";
 
+
 // Create account for user as an object with a balance and pinNumber.
 const account = {
     balance: 100.00,

@@ -14,6 +14,10 @@ function withdraw(withdrawAmount) {
 }
 
 function deposit(depositAmount) {
+  account.balance += depositAmount;
+  console.log(`New account balance after $${depositAmount} is $${account.balance}`);
+
+  return account.balance
   //TODO: deposit amount to current acct. balance
   // Log the current balance after deposit is made
 }

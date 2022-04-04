@@ -1,10 +1,9 @@
 "use strict";
 
+
+const prompt = require('prompt-sync')();
 const { getBalance, withdraw, deposit, validatePin } = require('./atm');
 
-//TODO: Add debugger (see demo video)
-//! Don't forget to add "console": "integratedTerminal" to .vscode/launch.json after creating launch configuration
-//TODO: Import necessary functions from atm.js
 //TODO: Utilize prompt-sync so we can get user input for various functions
 //* Refer to Intro to Node.js PowerPoint for prompt-sync installation instructions
 
@@ -28,3 +27,7 @@ function mainMenu() {
 
 //TODO: Call mainMenu function to start our app!
 console.log(getBalance());
+deposit(42);
+console.log(getBalance());
+let userAccount = prompt('Please enter account number.');
+console.log(userAccount);
