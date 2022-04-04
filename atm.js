@@ -5,7 +5,6 @@ const { accountBalance, accountPin } = require('./account');
 
 
 function getBalance() {
-  //TODO: Return the customer's acct. balance
   return accountBalance;
 }
 
@@ -28,5 +27,8 @@ function validatePin(enteredPin) {
 
 //TODO: Export these functions
 module.exports = {
-  getBalance: getBalance
+  getBalance: getBalance,
+  withdraw: withdraw,
+  deposit: deposit,
+  validatePin: validatePin
 };

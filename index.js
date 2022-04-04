@@ -1,6 +1,6 @@
 "use strict";
 
-const { getBalance } = require('./atm');
+const { getBalance, withdraw, deposit, validatePin } = require('./atm');
 
 //TODO: Add debugger (see demo video)
 //! Don't forget to add "console": "integratedTerminal" to .vscode/launch.json after creating launch configuration
@@ -27,5 +27,4 @@ function mainMenu() {
 }
 
 //TODO: Call mainMenu function to start our app!
-console.log('Tikaa is pudgy');
 console.log(getBalance());
