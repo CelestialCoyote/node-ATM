@@ -1,13 +1,12 @@
 "use strict";
-//! START HERE! Then atm.js, then index.js
-//! Remember to run npm init to create your Node application!
 
-//TODO: Create variables for account balance & account pin
-let accountBalance = 100.00;
-let accountPin = 1357924680;
+// Create account for user as an object with a balance and pinNumber.
+const account = {
+    balance: 100.00,
+    pinNumber: 1357924680
+}
 
-//Export these variables
+//Export the account for use in account.js.
 module.exports = {
-    accountBalance: accountBalance,
-    accountPin: accountPin
+    account
   };
