@@ -5,8 +5,6 @@ const prompt = require('prompt-sync')();
 const { account } = require('./account');
 const { getBalance, withdraw, deposit, validatePin } = require('./atm');
 
-//TODO: Utilize prompt-sync so we can get user input for various functions
-//* Refer to Intro to Node.js PowerPoint for prompt-sync installation instructions
 
 function accessATM() {
   if(validatePin(prompt('Please enter 4 digit pin number. #### - '))) {
@@ -15,24 +13,17 @@ function accessATM() {
 }
 
 //TODO: Call accessATM function
-//accessATM();
+accessATM();
 
 function mainMenu() {
-  //TODO: Set up a main menu.  Prompt users for ATM selection to do the following:
-  //! Remember - we should keep prompting the user for options until they quit!
-  //Get current balance
-  //Make a deposit
-  //Make a withdrawal
-  //Restart
-  //Quit
-
+  // Print menu options to console.
   console.log(
-    `Please select actions from menu.\n
-    1. Get current balance.\n
-    2. Make a deposit.\n
-    3. Make a withdrawl.\n
-    4. Restart.\n
-    5. Quit.\n`
+    `Please select actions from menu.
+    1. Get current balance.
+    2. Make a deposit.
+    3. Make a withdrawl.
+    4. Restart.
+    5. Quit.`
   );
   let choice = prompt('> ');
 
@@ -54,12 +45,9 @@ function mainMenu() {
         choice = prompt('> ');
         break;
       case '4':           // Restart.
-        console.log('You chose restart.');
-        console.log(`Please choose next option.\n`);
-        choice = prompt('> ');
+        accessATM();
         break;
       case '5':           // Quit.
-        //console.log('You chose quit.');
         break;
       default:
         console.log('Not a valid choice, please try again.');
@@ -70,6 +58,3 @@ function mainMenu() {
   console.log(`Thank you for your business.\nHave a pleasant day.`)
   
 }
-
-//TODO: Call mainMenu function to start our app!
-mainMenu();
