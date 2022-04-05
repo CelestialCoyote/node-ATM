@@ -30,13 +30,16 @@ function mainMenu() {
   while(choice !== '5') {
     switch (choice) {
       case '1':           // Get balance.
-        console.log(`Your current balance is: $${(account.balance).toFixed(2)}.`);
+        let balance = getBalance();
+        console.log(`Your current balance is: $${(balance).toFixed(2)}.`);
         console.log(`Please choose next option.\n`);
         choice = prompt('> ');
         break;
       case '2':           // Get make deposit.
-        console.log('You chose make deposit.');
-        console.log(`Please choose next option.\n`);
+        console.log('How much would you like to deposit?');
+        let depositAmount = parseInt(prompt('> '));
+        deposit(depositAmount);
+        console.log(`\nPlease choose next option.\n`);
         choice = prompt('> ');
         break;
       case '3':           // Get make withdrawl.
