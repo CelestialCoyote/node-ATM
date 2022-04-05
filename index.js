@@ -11,9 +11,11 @@ function accessATM() {
   //TODO: Prompt users for their pin
   //Use ATM.js validatePin function to verify pin matches
   //Proceed to main menu ONLY if they match
+  validatePin(prompt('Please enter 4 digit pin number. #### - '));
 }
 
 //TODO: Call accessATM function
+accessATM();
 
 function mainMenu() {
   //TODO: Set up a main menu.  Prompt users for ATM selection to do the following:
@@ -26,4 +28,4 @@ function mainMenu() {
 }
 
 //TODO: Call mainMenu function to start our app!
-console.log(validatePin(prompt('Please enter 4 digit pin number. #### - ')));
+//withdraw(150);
