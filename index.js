@@ -32,7 +32,7 @@ function mainMenu() {
       case '1':           // Get balance.
         let balance = getBalance();
         console.log(`Your current balance is: $${(balance).toFixed(2)}.`);
-        console.log(`Please choose next option.\n`);
+        console.log(`\nPlease choose next option.\n`);
         choice = prompt('> ');
         break;
       case '2':           // Get make deposit.
@@ -43,8 +43,10 @@ function mainMenu() {
         choice = prompt('> ');
         break;
       case '3':           // Get make withdrawl.
-        console.log('You chose make withdrawl.');
-        console.log(`Please choose next option.\n`);
+        console.log('How much would you like to withdrawl.');
+        let withdrawAmount = prompt('> ');
+        withdraw(withdrawAmount);
+        console.log(`\nPlease choose next option.\n`);
         choice = prompt('> ');
         break;
       case '4':           // Restart.
@@ -53,11 +55,10 @@ function mainMenu() {
       case '5':           // Quit.
         break;
       default:
-        console.log('Not a valid choice, please try again.');
+        console.log('\nNot a valid choice, please try again.');
         choice = prompt('> ');
     }
   }
 
-  console.log(`Thank you for your business.\nHave a pleasant day.`)
-  
+  console.log(`Thank you for your business.\nHave a pleasant day.`);
 }
