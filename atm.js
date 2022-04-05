@@ -11,14 +11,13 @@ function getBalance() {
 
 function withdraw(withdrawAmount) {
   if(withdrawAmount > account.balance) {
-    let newAmount = prompt('Insufficient funds for withdrawl.\nPlease enter new amount to withdraw.\n');
+    console.log('Insufficient funds for withdrawl.\nPlease enter new amount to withdraw.\n');
+    let newAmount = prompt('> ');
     withdraw(newAmount);
   } else {
     account.balance -= withdrawAmount;
-    console.log(`You have $${account.balance} remaining in your account.50`)
+    console.log(`You have $${account.balance} remaining in your account.`);
   }
-  //TODO: withdraw amount from current acct. balance
-  // Log the current balance after withdrawal is made
 }
 
 function deposit(depositAmount) {
@@ -26,7 +25,6 @@ function deposit(depositAmount) {
   console.log(`New account balance after $${depositAmount} is $${account.balance}`);
 
   return account.balance
-  // Log the current balance after deposit is made
 }
 
 function validatePin(enteredPin) {
@@ -39,10 +37,12 @@ function validatePin(enteredPin) {
 
     if(isNumber === false){
       numberOfTries--;
-      enteredPin = prompt(`Please enter only numbers between 0 and 9.\n${numberOfTries} attempt(s) remaining.\n`);
+      console.log(`Please enter only numbers between 0 and 9.\n${numberOfTries} attempt(s) remaining.\n`)
+      enteredPin = prompt('> ');
     } else if(pinToCheck !== account.pin) {
       numberOfTries--;
-      enteredPin = prompt(`Incorrect PIN, please try again.\n${numberOfTries} attempt(s) remaining.\n`);
+      console.log(`Incorrect PIN, please try again.\n${numberOfTries} attempt(s) remaining.\n`)
+      enteredPin = prompt('> ');
     } else if(pinToCheck === account.pin) {
       console.log(`PIN successfully entered.`);
       flag = true;
