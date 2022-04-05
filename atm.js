@@ -50,6 +50,7 @@ function validatePin(enteredPin) {
     }
   }
 
+  // Print console message that number of tries has been exceeded.
   if(numberOfTries == 1) {
     console.log(
       `You have exceeded the maximum number of trys.\nYour account has been locked for your security.\nPlease see branch manager to unlock account.\nHave a nice day.`
