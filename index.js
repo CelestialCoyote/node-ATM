@@ -20,26 +20,26 @@ function mainMenu() {
     switch (choice) {
       case '1':           // Get balance.
         let balance = getBalance();
-        console.log(`Your current balance is: $${balance}.\n`);
+        console.log(`\nYour current balance is: $${balance}.\n`);
         printMenu();
         choice = prompt('> ');
         break;
       case '2':           // Get make deposit.
-        console.log('How much would you like to deposit?');
+        console.log('\nHow much would you like to deposit?');
         let depositAmount = parseInt(prompt('> '));
         deposit(depositAmount);
         printMenu();
         choice = prompt('> ');
         break;
       case '3':           // Get make withdrawl.
-        console.log('How much would you like to withdrawl.');
+        console.log('\nHow much would you like to withdrawl.');
         let withdrawAmount = prompt('> ');
         withdraw(withdrawAmount);
         printMenu();
         choice = prompt('> ');
         break;
       case '4':           // Restart.
-        accessATM();
+        return accessATM();
         break;
       case '5':           // Quit.
         break;
