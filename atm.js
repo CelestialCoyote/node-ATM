@@ -16,13 +16,13 @@ function withdraw(withdrawAmount) {
     withdraw(newAmount);
   } else {
     account.balance -= withdrawAmount;
-    console.log(`You have $${account.balance} remaining in your account.`);
+    console.log(`You have $${account.balance} remaining in your account.\n`);
   }
 }
 
 function deposit(depositAmount) {
   account.balance += depositAmount;
-  console.log(`New account balance after $${depositAmount} is $${account.balance}`);
+  console.log(`New account balance after $${depositAmount} deposit is $${account.balance}.\n`);
 
   return account.balance
 }
@@ -44,7 +44,7 @@ function validatePin(enteredPin) {
       console.log(`Incorrect PIN, please try again.\n${numberOfTries} attempt(s) remaining.\n`)
       enteredPin = prompt('> ');
     } else if(pinToCheck === account.pin) {
-      console.log(`PIN successfully entered.`);
+      console.log(`\nPIN successfully entered.\n`);
       flag = true;
       break;
     }
